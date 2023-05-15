@@ -1,0 +1,165 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ownProject": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/own-project",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/fullcalendar.css",
+              "src/assets/css/jquery.bxslider.css",
+              "src/assets/css/owl.carousel.css",
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/css/prettyPhoto.css",
+              "src/assets/svg-icon/svg-style.css",
+              "src/assets/css/widget.css",
+              "src/assets/css/typography.css",
+              "src/assets/css/TimeCircles.css",
+              "src/assets/css/shortcodes.css",
+              "src/assets/js/dl-menu/component.css",
+              "src/assets/css/color.css",
+              "src/assets/css/responsive.css"
+            ],
+            "scripts": [
+              "src/assets/js/jquery.js",
+              "src/assets/js/bootstrap.js",
+              "src/assets/js/jquery.bxslider.min.js",
+              "src/assets/js/jquery.downCount.js",
+              "src/assets/js/owl.carousel.min.js",
+              "src/assets/js/waypoints-min.js",
+              "src/assets/js/pie.js",
+              "src/assets/js/jquery.accordion.js",
+              "src/assets/js/TimeCircles.js",
+              "src/assets/js/jquery.prettyPhoto.js",
+              "src/assets/js/jquery-filterable.js",
+              "src/assets/js/dl-menu/modernizr.custom.js",
+              "src/assets/js/dl-menu/jquery.dlmenu.js",
+              "src/assets/js/moment.min.js",
+              "src/assets/js/fullcalendar.min.js",
+              "src/assets/js/custom.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ownProject:build:production"
+            },
+            "development": {
+              "browserTarget": "ownProject:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ownProject:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/fullcalendar.css",
+              "src/assets/css/jquery.bxslider.css",
+              "src/assets/css/owl.carousel.css",
+              "src/assets/css/font-awesome.min.css",
+              "src/assets/css/prettyPhoto.css",
+              "src/assets/svg-icon/svg-style.css",
+              "src/assets/css/widget.css",
+              "src/assets/css/typography.css",
+              "src/assets/css/TimeCircles.css",
+              "src/assets/css/shortcodes.css",
+              "src/assets/js/dl-menu/component.css",
+              "src/assets/css/color.css",
+              "src/assets/css/responsive.css"
+            ],
+            "scripts": [
+              "src/assets/js/jquery.js",
+              "src/assets/js/bootstrap.js",
+              "src/assets/js/jquery.bxslider.min.js",
+              "src/assets/js/jquery.downCount.js",
+              "src/assets/js/owl.carousel.min.js",
+              "src/assets/js/waypoints-min.js",
+              "src/assets/js/pie.js",
+              "src/assets/js/jquery.accordion.js",
+              "src/assets/js/TimeCircles.js",
+              "src/assets/js/jquery.prettyPhoto.js",
+              "src/assets/js/jquery-filterable.js",
+              "src/assets/js/dl-menu/modernizr.custom.js",
+              "src/assets/js/dl-menu/jquery.dlmenu.js",
+              "src/assets/js/moment.min.js",
+              "src/assets/js/fullcalendar.min.js",
+              "src/assets/js/custom.js"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "b43910e1-caaa-45f1-b934-0fa08a86b17c"
+  }
+}
